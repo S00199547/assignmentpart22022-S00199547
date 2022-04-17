@@ -1,0 +1,29 @@
+<body>
+<div class="text-center">
+
+<h1>Stationery Shop</h1>
+
+<!-- nav -->
+
+<nav class="navbar navbar-expand navbar-light "style="background-color: rgb(195, 152, 152);"  >
+    <div class="navbar">
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" style="background-color:darkgray;" >Home</a>
+     <a class="nav-item nav-link" routerLink="/stationeries" routerLinkActive="active" style="background-color:darkgray;" >Stationery</a>
+        <a  *ngIf="user"  class="nav-item nav-link" routerLink="/users" routerLinkActive="active" style="background-color:darkgray;">Users</a>
+        <a  *ngIf="!user" class="nav-item nav-link" routerLink="/login" routerLinkActive="active" style="background-color:darkgray;">Login</a>
+        <a  *ngIf="!user" class="nav-item nav-link" routerLink="/register" routerLinkActive="active" style="background-color:darkgray;">Register</a>
+
+        <a *ngIf="user" class="nav-item nav-link"  style="background-color:darkgray;"(click)="logout()">Logout</a>
+       
+            
+        </div>
+</nav>
+
+<div *ngIf="user" >Current User:{{user.firstName}}</div>
+</div>
+
+<!--<app-device></app-device>-->
+<!--<app-device-list></app-device-list>-->
+<router-outlet></router-outlet>
+<!--<app-sample-form></app-sample-form>-->
+</body>
